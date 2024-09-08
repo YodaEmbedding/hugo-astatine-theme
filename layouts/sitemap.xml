@@ -1,6 +1,7 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <!-- TODO: save all PDF links in each page, then  range .Resources.ByType "pdf" ? or something like that... but this may be error prone. Perhaps just doing it manually is fine too, for now. We can automate some of it by just managing a "assets/assets/sitemap.xml", perhaps...? and then recursively expand the sitemaps. or let google do that actually...! perhaps a "meta" page with pdf links sitemap only -->
     {{ range .Data.Pages }}
     <url>
         <loc>{{ .Permalink }}</loc>{{ if not .Lastmod.IsZero }}
