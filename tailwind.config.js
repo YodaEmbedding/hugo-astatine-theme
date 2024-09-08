@@ -46,4 +46,14 @@ module.exports = {
   },
   plugins: [],
   darkMode: 'class',
+  safelist: [
+    {
+      pattern: /text-/,
+      variants: ['dark'],
+    },
+    {
+      pattern: /bg-/,
+      variants: ['dark'],
+    },
+  ],
 }
