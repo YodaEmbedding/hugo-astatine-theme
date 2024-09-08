@@ -11,15 +11,10 @@
     </div>
     <div class="publication grow shrink-2 basis-3/4 my-1.5 mx-2">
         {{ range $author_index, $author_val := .authors }}
-        {{ if $author_val.me }}
-        <b>
-        {{ end }}
+        {{ if $author_val.me }}<b>{{ end }}
             <span itemprop="author">{{- $author_val.name -}}</span>
             {{- /* Add comma if not last author */ -}}
-            {{- if le $author_index (len .) -}},{{- end -}}
-        {{ if $author_val.me }}
-        </b>
-        {{ end }}
+        {{ if $author_val.me }}</b>{{ end }},
         {{ end }}
         <br>
         <b>
